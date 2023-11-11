@@ -4,18 +4,21 @@
 #include <stdio.h>
 
 /**
- * struct op - Struct op
+ * struct format_specifier - Struct format_specifier
  *
  * @op: The operator
- * @f: The function associated
+ * @func: The function associated with the operator
  */
-typedef struct format_specifier {
-  char *op;
-  int (*func)(va_list args);
+typedef struct format_specifier
+{
+char *op;
+int (*func)();
 } fs;
 
 int _printf(const char *format, ...);
 int _putchar(char c);
 int get_character(va_list);
-
+int string_length(char *s);
+int get_string(va_list);
+int get_percent(void);
 #endif
