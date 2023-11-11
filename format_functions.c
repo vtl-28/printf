@@ -8,10 +8,11 @@
  */
 int get_character(va_list args)
 {
-char character;
-character = va_arg(args, int);
-_putchar(character);
-return (1);
+	char character;
+
+	character = va_arg(args, int);
+	_putchar(character);
+	return (1);
 }
 
 /**
@@ -21,33 +22,32 @@ return (1);
  */
 int get_string(va_list args)
 {
-int string_iterator;
-char *str;
-int str_length;
+	int string_iterator;
+	char *str;
+	int str_length;
 
-str = va_arg(args, char *);
+	str = va_arg(args, char *);
 
-if (str == NULL)
+	if (str == NULL)
 {
-str = "(nil)";
-str_length = string_length(str);
-
-for (string_iterator = 0; string_iterator < str_length;
-string_iterator++)
+		str = "(nil)";
+			str_length = string_length(str);
+	for (string_iterator = 0; string_iterator < str_length;
+	string_iterator++)
 {
-_putchar(str[string_iterator]);
+	_putchar(str[string_iterator]);
 }
-return (str_length);
+	return (str_length);
 }
-else
+	else
 {
-str_length = string_length(str);
+	str_length = string_length(str);
 
-for (string_iterator = 0; string_iterator < str_length;
-string_iterator++) {
-_putchar(str[string_iterator]);
+	for (string_iterator = 0; string_iterator < str_length;
+		string_iterator++) {
+	_putchar(str[string_iterator]);
 }
-return (str_length);
+	return (str_length);
 }
 }
 
@@ -57,7 +57,8 @@ return (str_length);
  */
 int get_percent(void)
 {
-int percent_asci_value = 37;
-_putchar(percent_asci_value);
-return (1);
+	int percent_asci_value = 37;
+
+	_putchar(percent_asci_value);
+	return (1);
 }

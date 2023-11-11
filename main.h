@@ -11,8 +11,8 @@
  */
 typedef struct format_specifier
 {
-char *op;
-int (*func)();
+	char *op;
+	int (*func)();
 } fs;
 
 int _printf(const char *format, ...);
