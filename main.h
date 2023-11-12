@@ -21,4 +21,6 @@ int get_character(va_list);
 int string_length(char *s);
 int get_string(va_list);
 int get_percent(void);
+int get_signed_int(va_list args);
+int get_unsigned_int(va_list args);
 #endif

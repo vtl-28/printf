@@ -11,15 +11,17 @@
 
 int _printf(const char *format, ...)
 {
+	va_list args;
 	int format_iterator = 0, length = 0;
 	int struct_iterator;
 
 	fs op[] = {{"%c", get_character},
 		{"%c", get_character},
 		{"%s", get_string},
-		{"%%", get_percent}};
-
-	va_list args;
+		{"%%", get_percent},
+		   {"%d", get_signed_int},
+		   {"%i", get_unsigned_int}
+	};
 
 	va_start(args, format);
 
@@ -27,7 +29,7 @@ int _printf(const char *format, ...)
 	return (-1);
 	while (format[format_iterator] != '\0')
 {
-	struct_iterator = 3;
+	struct_iterator = 5;
 	while (struct_iterator > 0)
 	{
 	if (op[struct_iterator].op[0] == format[format_iterator] &&
