@@ -21,7 +21,12 @@ int _printf(const char *format, ...)
 		{"%%", get_percent},
 		{"%d", get_signed_int},
 		{"%i", get_unsigned_int},
+		   {"%u", get_unsigned_u},
 		{"%b", print_bin_conv},
+		   {"%o", get_octal},
+		   {"%x", get_hex},
+		   {"%X", get_HEX},
+		   {"%S", get_hex_string}
 	};
 
 	va_start(args, format);
@@ -30,7 +35,7 @@ int _printf(const char *format, ...)
 	return (-1);
 	while (format[format_iterator] != '\0')
 {
-	struct_iterator = 6;
+	struct_iterator = 11;
 	while (struct_iterator > 0)
 	{
 	if (op[struct_iterator].op[0] == format[format_iterator] &&

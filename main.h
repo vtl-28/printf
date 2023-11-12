@@ -2,6 +2,7 @@
 #define MAIN_H
 #include <stdarg.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 /**
  * struct format_specifier - Struct format_specifier
@@ -24,4 +25,10 @@ int get_percent(void);
 int get_signed_int(va_list args);
 int get_unsigned_int(va_list args);
 int print_bin_conv(va_list val);
+int get_unsigned_u(va_list args);
+int get_octal(va_list args);
+int get_hex(va_list args);
+int get_HEX(va_list args);
+int get_hex_string(va_list args);
+int get_HEX_two(unsigned int value);
 #endif
