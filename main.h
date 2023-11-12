@@ -24,4 +24,6 @@ int get_percent(void);
 int get_signed_int(va_list args);
 int get_unsigned_int(va_list args);
 int print_bin_conv(va_list val);
+int get_p(va_list val);
+int get_HEX_three(unsigned long int value);
 #endif
