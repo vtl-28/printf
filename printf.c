@@ -19,8 +19,9 @@ int _printf(const char *format, ...)
 		{"%c", get_character},
 		{"%s", get_string},
 		{"%%", get_percent},
-		   {"%d", get_signed_int},
-		   {"%i", get_unsigned_int}
+		{"%d", get_signed_int},
+		{"%i", get_unsigned_int},
+		{"%b", print_bin_conv},
 	};
 
 	va_start(args, format);
@@ -29,7 +30,7 @@ int _printf(const char *format, ...)
 	return (-1);
 	while (format[format_iterator] != '\0')
 {
-	struct_iterator = 5;
+	struct_iterator = 6;
 	while (struct_iterator > 0)
 	{
 	if (op[struct_iterator].op[0] == format[format_iterator] &&

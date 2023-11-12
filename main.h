@@ -23,4 +23,5 @@ int get_string(va_list);
 int get_percent(void);
 int get_signed_int(va_list args);
 int get_unsigned_int(va_list args);
+int print_bin_conv(va_list val);
 #endif
