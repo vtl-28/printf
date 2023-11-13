@@ -17,7 +17,7 @@ int get_string(va_list args)
 
 	if (str == NULL)
 {
-		str = "(nil)";
+		str = "(null)";
 			str_length = string_length(str);
 	for (string_iterator = 0; string_iterator < str_length;
 	string_iterator++)
