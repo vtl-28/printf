@@ -37,7 +37,7 @@ int _printf(const char *format, ...)
 	return (-1);
 	while (format[format_iterator] != '\0')
 {
-	structnd yo_iterator = 13;
+	struct_iterator = 13;
 
 	while (struct_iterator > 0)
 	{
