@@ -12,6 +12,7 @@ int get_string(va_list args)
 	int string_iterator;
 	char *str;
 	int str_length;
+
 	str = va_arg(args, char *);
 
 	if (str == NULL)
