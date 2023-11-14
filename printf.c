@@ -28,7 +28,7 @@ int _printf(const char *format, ...)
 
 	if (format == NULL || (format[0] == '%' && format[1] == ' '))
 		return (-1);
-	format_specifier_checker(format);
+
 
 	while (format[format_iterator] != '\0')
 {
