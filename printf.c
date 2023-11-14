@@ -28,8 +28,6 @@ int _printf(const char *format, ...)
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 	return (-1);
 
-	format_specifier_checker(format);
-
 	while (format[format_iterator] != '\0')
 {
 	struct_iterator = 11;
