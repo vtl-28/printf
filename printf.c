@@ -21,10 +21,10 @@ int _printf(const char *format, ...)
 		{"%S", get_hex_string}, {"%p", get_p}
 	};
 
-	va_start(args, format);
+		if (format == NULL || (format[0] == '%' && format[1] == '\0'))
+			return (-1);
 
-	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
-	return (-1);
+	va_start(args, format);
 
 	if (format == NULL || (format[0] == '%' && format[1] == ' '))
 		return (-1);
