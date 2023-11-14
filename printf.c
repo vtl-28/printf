@@ -35,6 +35,26 @@ int _printf(const char *format, ...)
 
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 	return (-1);
+
+	if ((format[0] == '%' && format[1] != 'c') ||
+	    (format[0] == '%' && format[1] != 's') ||
+	    (format[0] == '%' && format[1] != '%') ||
+	    (format[0] == '%' && format[1] != 'd') ||
+	    (format[0] == '%' && format[1] != 'i') ||
+	    (format[0] == '%' && format[1] != 'u') ||
+	    (format[0] == '%' && format[1] != 'o') ||
+	    (format[0] == '%' && format[1] != 'x') ||
+	    (format[0] == '%' && format[1] != 'X') ||
+	    (format[0] == '%' && format[1] != 'p') ||
+	    (format[0] == '%' && format[1] != 'b') ||
+	    (format[0] == '%' && format[1] != 'S'))
+	{
+		_putchar(format[1]);
+		return (-1);
+	}
+
+
+
 	while (format[format_iterator] != '\0')
 {
 	struct_iterator = 13;
