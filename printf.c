@@ -8,13 +8,11 @@
  *
  * Return: Number of characters printed
  */
-
 int _printf(const char *format, ...)
 {
 	va_list args;
 	int format_iterator = 0, length = 0;
 	int struct_iterator;
-
 	fs op[] = {
 		{"%c", get_character}, {"%s", get_string}, {"%%", get_percent},
 		{"%d", get_signed_int}, {"%i", get_unsigned_int},
@@ -27,6 +25,10 @@ int _printf(const char *format, ...)
 
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 	return (-1);
+
+	if (format == NULL || (format[0] == '%' && format[1] == ' '))
+		return (-1);
+	format_specifier_checker(format);
 
 	while (format[format_iterator] != '\0')
 {

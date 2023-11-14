@@ -8,6 +8,8 @@
 
 int format_specifier_checker(const char *format)
 {
+	int len = 0;
+
 	if ((format[0] == '%' && format[1] != 'c') ||
 	    (format[0] == '%' && format[1] != 's') ||
 	    (format[0] == '%' && format[1] != '%') ||
@@ -21,7 +23,7 @@ int format_specifier_checker(const char *format)
 	    (format[0] == '%' && format[1] != 'b') ||
 	    (format[0] == '%' && format[1] != 'S'))
 	{
-		_putchar(format[1]);
+		len += _putchar(format[1]);
 	}
-	return (-1);
+	return (len);
 }
