@@ -16,19 +16,11 @@ int _printf(const char *format, ...)
 	int struct_iterator;
 
 	fs op[] = {
-		{"%c", get_character},
-		{"%s", get_string},
-		{"%%", get_percent},
-		{"%d", get_signed_int},
-		{"%i", get_unsigned_int},
-		{"%u", get_unsigned_u},
-		{"%b", print_bin_conv},
-		{"%o", get_octal},
-		{"%x", get_hex},
-		{"%X", get_HEX},
-		{"%S", get_hex_string},
-		{"%X", get_HEX_three},
-		{"%p", get_p},
+		{"%c", get_character}, {"%s", get_string}, {"%%", get_percent},
+		{"%d", get_signed_int}, {"%i", get_unsigned_int},
+		{"%u", get_unsigned_u}, {"%b", print_bin_conv},
+		{"%o", get_octal}, {"%x", get_hex}, {"%X", get_HEX},
+		{"%S", get_hex_string}, {"%p", get_p}
 	};
 
 	va_start(args, format);
@@ -36,28 +28,11 @@ int _printf(const char *format, ...)
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 	return (-1);
 
-	if ((format[0] == '%' && format[1] != 'c') ||
-	    (format[0] == '%' && format[1] != 's') ||
-	    (format[0] == '%' && format[1] != '%') ||
-	    (format[0] == '%' && format[1] != 'd') ||
-	    (format[0] == '%' && format[1] != 'i') ||
-	    (format[0] == '%' && format[1] != 'u') ||
-	    (format[0] == '%' && format[1] != 'o') ||
-	    (format[0] == '%' && format[1] != 'x') ||
-	    (format[0] == '%' && format[1] != 'X') ||
-	    (format[0] == '%' && format[1] != 'p') ||
-	    (format[0] == '%' && format[1] != 'b') ||
-	    (format[0] == '%' && format[1] != 'S'))
-	{
-		_putchar(format[1]);
-		return (-1);
-	}
-
-
+	format_specifier_checker(format);
 
 	while (format[format_iterator] != '\0')
 {
-	struct_iterator = 12;
+	struct_iterator = 11;
 
 	while (struct_iterator >= 0)
 	{

@@ -33,4 +33,5 @@ typedef struct format_specifier
 	int get_HEX_two(unsigned int value);
 	int get_p(va_list val);
 	int get_HEX_three(unsigned long int value);
+        int format_specifier_checker(const char *format);
 #endif
